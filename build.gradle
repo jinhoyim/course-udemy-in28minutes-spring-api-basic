@@ -26,7 +26,7 @@ dependencies {
 //    implementation('org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0')
 //    implementation('com.fasterxml.jackson.dataformat:jackson-dataformat-xml')
 
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    compileOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
