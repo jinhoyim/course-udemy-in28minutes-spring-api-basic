@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  in28min-restful-pgdb:
+    image: postgres:16.2-bookworm-koKR_UTF8
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: in28min-restful-pgdb
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: fnxmdkaghvotmdnjem
+      POSTGRES_DB: testdb
+      LANG: ko_KR.UTF-8
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  adminer:
+    image: adminer
+    container_name: pg-adminer
+    restart: always
+    ports:
+      - "40080:8080"

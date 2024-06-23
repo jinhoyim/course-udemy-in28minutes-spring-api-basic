@@ -1,12 +1,18 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
+import java.util.List;
 
+@Entity(name = "user_details")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Size(min = 2, message = "이름은 2글자 이상 입력해주세요.")
@@ -14,6 +20,13 @@ public class User {
 
     @Past(message = "생년월일은 과거 날짜만 가능합니다.")
     private LocalDate birthDate;
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Post> posts;
+
+    protected User() {
+    }
 
     public User(Integer id, String name, LocalDate birthDate) {
         this.id = id;
@@ -43,6 +56,10 @@ public class User {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public List<Post> getPosts() {
+        return this.posts;
     }
 
     @Override

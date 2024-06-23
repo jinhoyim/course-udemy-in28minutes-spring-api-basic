@@ -28,7 +28,8 @@ dependencies {
 //    implementation('com.fasterxml.jackson.dataformat:jackson-dataformat-xml')
 
     compileOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'org.postgresql:postgresql:42.7.3'
+//    runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
