@@ -22,6 +22,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 
 // 스웨거와 XML은 고급 기능을 다룰 때 문제가 있다고 주석처리함. 섹션8-18단계 149.
 //    implementation('org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0')
